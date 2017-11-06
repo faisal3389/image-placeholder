@@ -1,6 +1,6 @@
 {
   "name": "ng-image-placeholder",
-  "version": "1.0.2",
+  "version": "1.0.9",
   "description": "Module for image-placeholder directive",
   "main": "bundles/core.umd.min.js",
   "module": "dist/index.js",
@@ -15,7 +15,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "modules"
+    "modules",
+    "image",
+    "placeholder",
+    "angular",
+    "faisal",
+    "node",
+    "ng-image"
   ],
   "author": "Faisal Ali (https://github.com/faisal3389)",
   "repository": "faisal3389/image-placeholder",
