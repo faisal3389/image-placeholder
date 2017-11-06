@@ -1,0 +1,42 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "declaration": true,
+        "stripInternal": true,
+        "experimentalDecorators": true,
+        "module": "es2015",
+        "moduleResolution": "node",
+        "paths": {
+            "@angular/core": [
+                "../node_modules/@angular/core"
+            ]
+        },
+        "sourceMap": true,
+        "inlineSources": true,
+        "target": "es5",
+        "skipLibCheck": true,
+        "lib": [
+            "es2015",
+            "dom"
+        ],
+        "outDir": "../dist"
+    },
+    "files": [
+        "../node_modules/typescript/lib/lib.es6.d.ts",
+        "../index.ts"
+    ],
+    "angularCompilerOptions": {
+        "strictMetadataEmit": true,
+        "skipTemplateCodegen": true,
+        "genDir": ".."
+    },
+    "exclude": [
+        "node_modules",
+        "example",
+        "typings-test",
+        "public_api_guard",
+        "**/*.spec.ts"
+    ],
+    "compileOnSave": false,
+    "buildOnSave": false
+}

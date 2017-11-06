@@ -1,0 +1,40 @@
+{
+  "name": "ng-image-placeholder",
+  "version": "1.0.0",
+  "description": "Module for image-placeholder directive",
+  "main": "bundles/core.umd.min.js",
+  "module": "dist/index.js",
+  "scripts": {
+    "ngc": "./node_modules/.bin/ngc --p config/tsconfig.dist.json",
+    "postngc": "node node_modules/rimraf/bin *.ngsummary.json",
+    "prebundle": "node  node_modules/rollup/bin/rollup -c config/rollup.js",
+    "bundle": "./node_modules/.bin/uglifyjs --compress --mangle --output bundles/core.umd.min.js -- bundles/core.umd.js",
+    "clean": "node node_modules/rimraf/bin dist bundles",
+    "prebuild": "npm run clean",
+    "build": "npm run ngc && npm run bundle",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "modules"
+  ],
+  "author": "Faisal Ali",
+  "license": "ISC",
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/platform-browser": "^4.0.0",
+    "@angular/compiler-cli": "^4.0.1",
+    "rimraf": "^2.6.1",
+    "rollup": "^0.41.6",
+    "typescript": "^2.2.0",
+    "uglify-js": "^3.0.11",
+    "zone.js": "^0.8.5"
+  },
+  "dependencies": {
+    "@angular/core": "^4.0.0"
+  }
+}
