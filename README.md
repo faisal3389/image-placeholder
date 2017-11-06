@@ -21,7 +21,7 @@ import { ImagesDirective } from 'ng-image-placeholder';
 ```
 #### example
 ```
-<img ng-image-placeholder src="{{image src}}" alt="{{image alt text}}">
+<img ng-image-placeholder src="{{image-src}}" placeholder="{{placeholder-image}}">
 ```
 ## CHANGELOG
 
