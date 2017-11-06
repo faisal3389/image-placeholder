@@ -25,7 +25,8 @@ import { ImagesDirective } from 'ng-image-placeholder';
 ```
 ## CHANGELOG
 
-* 1.0.0 -- first publish
+* 1.0.0 -- basic module for imageplaceholder
+* 1.1.0 -- added placeholder as input to directive
            
 ## TODO
 * need to make broken image dynamic

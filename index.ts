@@ -31,6 +31,9 @@ export class ImagesDirective {
   /**taking input for image src url */
   @Input() src: string;
 
+  /**taking input for image placeholder */
+  @Input() placeholder: string;
+
   /**private variable for array of image formats which are supported */
   private _SUPPORTED_IMAGES_FORMAT: string[] = ['jpg', 'png', 'ico', 'svg', 'jpeg'];
 
@@ -39,9 +42,6 @@ export class ImagesDirective {
   
   /**private variables for transition-delay of 1sec */
   private _TRANSITION_DELAY_TIME = '0.5s';
-
-  /**private variables for noimage placeholder local asset */
-  private _NO_IMAGE = 'noimage.png';
 
   /**private variable for array of image formats which are supported */
   private _REMOTE_MARKERS: any[] = ['http', 'msecnd.net', 'yum-resources'];    
@@ -60,11 +60,12 @@ export class ImagesDirective {
    */
   transform(asset: string) {
       let finalImageUrl = asset;
+      let fallbackImage = this.placeholder ? this.placeholder : '';
       if (!asset || asset === '') {
-          return this.loadImage(this._getLocalResource(this._NO_IMAGE));
+          return this.loadImage(fallbackImage);
       }
       if (!this._isImageAsset(asset)) {
-          return this.loadImage(this._getLocalResource(this._NO_IMAGE));
+          return this.loadImage(fallbackImage);
       }
       return this.loadImage(asset);
   }
@@ -74,7 +75,7 @@ export class ImagesDirective {
    * @param image 
    */
   loadImage(image: string) {
-      let defaultImage = this._getLocalResource(this._NO_IMAGE);
+      let defaultImage = this.placeholder ? this.placeholder : '';
       this.currentElement.src = defaultImage;
       const img = new Image();
       if (image) {
@@ -124,13 +125,5 @@ export class ImagesDirective {
       }
       return false;
   }
-
-  /**
-   * Get image from local assets
-   * @param name - name of the asset to get it resource
-   */
-  private _getLocalResource(name: string) {
-      return './' + name;
-  }
-
+  
 }
