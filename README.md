@@ -1,7 +1,7 @@
 # Angular Image Placeholder Module
 
 ## Description
-Module for Image placeholder Directive for angular apps
+Module for Image placeholder Directive for angular apps when images are loaded dynamically over network calls
 
 ## API usage
 
